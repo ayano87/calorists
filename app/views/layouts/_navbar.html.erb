@@ -8,14 +8,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+         <a class="navbar-brand" href="/">Coloriest</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <a href="#">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                商品を投稿
+              <%= link_to '商品を投稿', new_food_path %>
                 </a>
             </li>
 
