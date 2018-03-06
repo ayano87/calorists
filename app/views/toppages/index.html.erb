@@ -1,11 +1,12 @@
-<% content_for :cover do %>
-
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+<% else %>
   <div class="cover">
     <div class="cover-inner">
       <div class="cover-contents">
         <div class=text-center><h1>Calorist</h1>
-          <a href="" class="btn btn-success btn-lg">ログイン</a>
-          <a href="" class="btn btn-success btn-lg">会員登録</a>
+          <%= link_to '新規登録', signup_path,class: 'btn btn-lg btn-primary' %>
+          <%= link_to 'ログイン', login_path, class: 'btn btn-lg btn-primary' %>
         </div>
       </div>
     </div>

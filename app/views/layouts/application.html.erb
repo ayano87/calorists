@@ -30,13 +30,17 @@
   <body>
     
 <%= yield :cover %>
-
+   <% if logged_in? %>
+      <%= render 'layouts/navbar' %>
+   <% end %>
     <div class="container">
       <%= render 'layouts/flash_messages' %>
+      
+      
 
 
       
-<%= yield %>
+  <%= yield %>
 
  <%= render 'layouts/footer' %>
  
