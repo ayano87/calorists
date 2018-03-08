@@ -1,27 +1,33 @@
 <div class="row">
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="text-center">
-      商品の詳細
-    </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="text-center">
+        商品の詳細
+      </div>
     </div>
     <div class="panel-body">
-  <aside class="col-xs-4">
-<div class="user-profile">
-  <div class="name text-center">
-    <h1><%= @food.name %></h1>
-  </div>
-  <div class="icon text-center">
-    <img src="http://placehold.it/200x200" alt="" class="img-circle">
-  </div>
-  <div class="name text-center">
-    <h1><%= @food.calorie %><span class="text-muted">kcal</span></h1>
-  </div>
+    <aside class="col-xs-4">
+       <div class="food-profile">
+         <div class="name text-center">
+            <h1><%= @food.name %></h1>
+         </div>
+         <div class="icon text-center">
+            <img src="http://placehold.it/200x200" alt="" class="img-circle">
+         </div>
+         <div class="name text-center">
+            <h1><%= @food.calorie %><span class="text-muted">kcal</span></h1>
+         </div>
+      </div>
+   </aside>
+   <div class="col-xs-8">
+     <%= @food.comment %>
+   </div>
+   <%= render "favorites/favorite_button", food: @food %>
+   
+   <% if current_user == @food.user %>
+      <%= link_to "Delete", @food , method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+      <%= link_to '編集する', edit_food_path(@food), class: 'btn btn-primary btn-xs'  %>
+   <% end %>
 </div>
-</aside>
-<div class="col-xs-8">
-  <%= @food.comment %>
-</div>
-<%= render "favorites/favorite_button", food:@food %>
 </div>
 </div>

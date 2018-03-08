@@ -2,9 +2,6 @@ class FoodsController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy]
   
-  def index
-  end
-  
   def new
     @food = Food.new
   end
@@ -13,9 +10,22 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
   end
   
-  def update
+  def edit
+    @food = Food.find(params[:id])
   end
   
+  def update
+    @food = Food.find(params[:id])
+
+    if @food.update(food_params)
+      flash[:success] = '商品を編集しました。'
+      redirect_to @food
+    else
+      flash.now[:danger] = '編集に失敗しました。'
+      render :edit
+    end
+  end
+
   def create
     @food = current_user.foods.build(food_params)
     if @food.save
@@ -29,9 +39,10 @@ class FoodsController < ApplicationController
   end
 
   def destroy
+    @food = Food.find(params[:id])
     @food.destroy
     flash[:success] = '商品を削除しました。'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_url
   end
   
   private
