@@ -15,6 +15,7 @@
     padding: 10px;
     text-align: center;
     line-height: 1.5;
+     background-color: rgba(183,213,209,0.5);
 }
 
 #inner-header {
@@ -45,7 +46,7 @@ body {
 .bg-mask{
   height:	100%;
   width:100%;
-	background-color:		rgba(183,213,209,0.9);
+	background-color:		rgba(183,213,209,0.5);
 }
 
 footer {
@@ -170,4 +171,8 @@ footer {
 }
 .user {
   margin:30px;
+}
+
+.login-form {
+  margin: 50px;
 }

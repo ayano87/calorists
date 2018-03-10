@@ -1,45 +1,39 @@
+<div class="container">
 <div class="row">
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="text-center">
-      <h2>商品を編集する</h2>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+       <div class="text-center">
+         商品を編集する
+       </div>
     </div>
-    </div>
-      <div class="panel-body">
-        <%= form_for(@food) do |f| %>
-          <%= render "layouts/error_messages", model: f.object %>
-          <aside class="col-xs-5">
-            <div class="form-group">
-              <%= f.label :name, '商品名' %>
-              <%= f.text_field :name, class: 'form-control' %>
-            </div>
-            
-            <!--<div class="icon text-center">-->
-            <!--  <img src="http://placehold.it/200x200" alt="" class="img-circle">-->
-            <!--</div>-->
-            
-            <!--<div class="form-group">-->
-            <!--  <%#= f.label :image_url, '画像のURL' %>-->
-            <!--  <%#= f.text_field :image_url, class: 'form-control' %>-->
-            <!--</div>-->
-          </aside>
-    
-         <div class="col-xs-7">
+    <div class="panel-body">
+      <%= form_for(@food) do |f| %>
+      <%= render "layouts/error_messages", model: f.object %>
+       <div class="icon text-center">
+         <img src="/sara.png" alt="お皿">
+       </div>
+       <aside class="col-xs-4 col-xs-offset-1">
+         
+          <div class="form-group">
+            <%= f.label :name, '商品名' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
           <div class="form-group">
             <%= f.label :calorie, 'カロリー' %>
-            <%= f.text_field :calorie, class: 'form-control' %>
+            <%= f.text_field :calorie, class: 'form-control'%>
           </div>
-          
+        </aside>
+        <div class="col-xs-offset-1 col-xs-5">
           <div class="form-group">
             <%= f.label :comment, 'コメント' %>
             <%= f.text_area :comment, class: 'form-control', rows: 5 %>
           </div>
-          
           <div class="text-right">
-            <%= f.submit '登録する', class: 'btn btn-success' %>
+            <%= f.submit '編集を完了する', class: 'btn btn-success' %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>
 </div>
