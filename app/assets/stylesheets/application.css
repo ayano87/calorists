@@ -116,29 +116,39 @@ footer {
   color: #e78265;
 }
 
+.word {
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #777777;
+}
 
-.box {
-    position: relative;
-    margin: 2em 0;
+.word2 {
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #777777;
+}
+
+.profile-text {
+  margin:0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #777777;
+}
+.box2 {
     padding: 0.5em 1em;
-    border: solid 3px #95ccff;
-    border-radius: 8px;
-}
-.box .box-title {
-    position: absolute;
-    display: inline-block;
-    top: -13px;
-    left: 10px;
-    padding: 0 9px;
-    line-height: 1;
-    font-size: 19px;
-    background: #FFF;
-    color: #95ccff;
+    margin:  0;
     font-weight: bold;
+    color: #777777;
+    background: #FFF;
+    border: solid 3px #e78265;/*線*/
+    border-radius: 30px;
 }
-.box p {
-    margin: 0; 
-    padding: 0;
+
+.box2 p {
+    margin: 10px; 
+    padding: 50px;
 }
 
 .box5 {
@@ -146,4 +156,18 @@ footer {
     margin: 2em 0;
     border: double 20px #fff;
     border-radius: 50px;
+}
+
+.box3 {
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    border: solid 20px #fff;
+    border-radius: 50px;
+}
+.user-profile {
+  margin:10px;
+  padding: 0px;
+}
+.user {
+  margin:30px;
 }

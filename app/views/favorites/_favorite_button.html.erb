@@ -1,11 +1,11 @@
 <% if current_user.favorite?(food) %>
     <%= form_for(current_user.favorites.find_by(food_id: food.id),html: { method: :delete}) do |f| %>
       <%= hidden_field_tag :food_id, food.id %>
-      <%= f.submit "unfavorite", class: "btn btn-danger btn-xs" %>
+      <%= f.submit "お気に入りから外す", class: "btn btn-danger" %>
     <% end %>
 <% else %>
     <%= form_for(current_user.favorites.build) do |f| %>
       <%= hidden_field_tag :food_id, food.id %>
-      <%= f.submit "favorite", class: "btn btn-primary btn-xs" %>
+      <%= f.submit "この商品をお気に入りする", class: "btn btn-primary" %>
     <% end %>
 <% end %>

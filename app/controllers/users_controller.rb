@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @foods = current_user.foods.order('created_at DESC')
     @food = Food.find(params[:id])
+    @favorites = @user.favorite_foods
   end
 
   def new
