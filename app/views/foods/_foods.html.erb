@@ -1,14 +1,18 @@
 <div class="row media-list">
   <% foods.each do |food| %>
     <div class="col-sm-3">
-      <div class="media-left">
+      <div class="box5">
+      <div class="media-center">
         <div class="text-center">
-          <h2><%= food.calorie %><span class="text-muted">kcal</span></h2>
+          <div class="h2"><%= food.calorie %><span class="text-muted"> kcal</span></div>
         </div>
-          <%= link_to image_tag('http://placehold.it/150x150', { :border => '0', :alt => '新規登録'}), food_path(food) %>
+         <div class="icon text-center">
+          <%= link_to image_tag('/onigiri.png', { :border => '0', :alt => '商品画像'}), food_path(food) %>
+          </div>
         <div class="text-center">
-          <p><%= link_to food.name ,food_path(food) %></p>
+          <div class="h3"><%= link_to food.name ,food_path(food), :style=>"color:#fff;" %></div>
         </div>
+      </div>
       </div>
     </div>
   <% end %>

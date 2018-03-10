@@ -1,10 +1,15 @@
 <% if logged_in? %>
 <div class="row">
+   
     <div class="col-xs-12">
       <%= render 'foods/foods', foods: @foods %>
-    </div>
+      </div>
   </div>
 <% else %>
+<body id="index">
+  <div class="bg-mask">
+<div class="wrapper">
+  <div class="inside">
   <div class="cover">
     <div class="cover-inner">
       <div class="cover-contents">
@@ -15,4 +20,8 @@
       </div>
     </div>
   </div>
+  </div>
+</div>
+</div>
+</body>
 <% end %>

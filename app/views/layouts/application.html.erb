@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    
     <title>Calorists</title>
     
     
@@ -14,7 +13,8 @@
       <!-- Bootstrap CSS-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <!-- app/assets/stylesheets -->
-
+      
+      
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
       <!-- jQuery -->
@@ -25,14 +25,23 @@
       
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
+
   </head>
 
   <body>
+<div id="header-fixed">
+<header class="header header--center">
+  <div id ="inner-header">
     
 <%= yield :cover %>
+  <p id="logo">
+    <a href="/"><img src="/title.png" class="title"></a>
+  </p>
+   </header>
    <% if logged_in? %>
       <%= render 'layouts/navbar' %>
    <% end %>
+    
     <div class="container">
       <%= render 'layouts/flash_messages' %>
       
@@ -45,5 +54,8 @@
  <%= render 'layouts/footer' %>
  
     </div>
+    </div>
+ 
+  
   </body>
 </html>
